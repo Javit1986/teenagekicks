@@ -1,0 +1,21 @@
+.parrafo {
+  padding: 0px;
+  font-style: italic;
+
+  margin-top: -18px;
+}
+
+.parrafo2 {
+  padding: 0px;
+  font-style: italic;
+
+  margin-top: -18px;
+}
+.img {
+  position: fixed; /* Asegura que la imagen se posicione relativa a la ventana del navegador */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
+  z-index: -1; /* Envía la imagen al fondo z de todos los elementos */
+  opacity: 0.25; /* 75% transparente */
+}

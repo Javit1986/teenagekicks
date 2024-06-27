@@ -1,0 +1,95 @@
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* Home.module.css */
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px;
+}
+
+.saludo {
+  text-align: left;
+  color: #f5deb3;
+  position: fixed;
+
+  top: 0; /* Fijado a la parte superior */
+  left: 50px; /* Fijado a la izquierda */
+
+  z-index: 1000;
+  padding: 2px;
+}
+
+.imgsalir {
+  text-align: left;
+  color: #f5deb3;
+  position: fixed;
+  max-height: 40px;
+  top: 16px;
+  left: 10px;
+
+  z-index: 1000;
+  padding: 2px;
+}
+
+.imgsalir:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.listaMedias {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas adicionales si no caben */
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+.media {
+  width: calc(33.33% - 20px); /* Ancho del elemento, ajustable según el diseño deseado */
+  background-color: #ff000060; /* Color de fondo del elemento */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.media h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.media p {
+  color: #666;
+}
+
+.media button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.media button:hover {
+  background-color: #0056b3;
+}

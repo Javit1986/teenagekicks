@@ -1,0 +1,9 @@
+.titulo_login {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Espacio de 20px entre h1 e img */
+}
+.img {
+  max-height: 100px;
+}
