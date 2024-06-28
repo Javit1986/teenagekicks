@@ -55,7 +55,7 @@ function Login() {
       <input type="email" onChange={handleTexto} name="email" placeholder="email" />
       <input type="password" onChange={handleTexto} name="password" placeholder="contraseña" />
       <button onClick={handleLogin}> login </button>
-      <Link to={"/registrate"}>
+      <Link to={"/teenagekicks/registrate"}>
         <button> registrate </button>
       </Link>
     </div>

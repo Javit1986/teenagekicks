@@ -11,11 +11,12 @@ const AppContent = () => {
   console.log("estado de sesion: ", sesion);
   return (
     <Routes>
-      <Route path="/" element={sesion ? <Navigate to="/home" /> : <Login />} />
-      <Route path="/registrate" element={sesion ? <Navigate to="/home" /> : <Registrate />} />
-      <Route path="/home" element={sesion ? <Home /> : <Navigate to="/" />} />
-      <Route path="/inventario" element={sesion ? <Home /> : <Navigate to="/" />} />
-      <Route path="/carrito" element={sesion ? <Carrito /> : <Navigate to="/" />} />
+      <Route path="/teenagekicks/" element={sesion ? <Navigate to="/teenagekicks/login" /> : <Login />} />
+      <Route path="/teenagekicks/login" element={sesion ? <Navigate to="/teenagekicks/home" /> : <Login />} />
+      <Route path="/teenagekicks/registrate" element={sesion ? <Navigate to="/teenagekicks/home" /> : <Registrate />} />
+      <Route path="/teenagekicks/home" element={sesion ? <Home /> : <Navigate to="/teenagekicks/login" />} />
+      <Route path="/teenagekicks/inventario" element={sesion ? <Home /> : <Navigate to="/teenagekicks/login" />} />
+      <Route path="/teenagekicks/carrito" element={sesion ? <Carrito /> : <Navigate to="/teenagekicks/login" />} />
     </Routes>
   );
 };

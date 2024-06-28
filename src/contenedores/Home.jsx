@@ -18,19 +18,14 @@ function Home() {
       if (user) {
         const db = getDatabase();
         console.log("quien es ese hoooombre: ", user);
-        setUsuario(user.email);
+
         const usuarioRef = ref(db, `usuarios/${user.uid}`); // Usar el uid del usuario SALE MALLL
+
         onValue(
           usuarioRef,
           (snapshot) => {
             const userData = snapshot.val();
-            if (userData) {
-              const { nombre } = userData;
-              setUsuario(nombre);
-              setUsuario(user.email);
-            } else {
-              console.log("No se encontraron datos para el usuario con uid:", user.uid);
-            }
+            setUsuario(userData.nombre);
           },
           {
             onlyOnce: true, // Escuchar solo una vez para evitar suscripciones múltiples innecesarias

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, push } from "firebase/database";
+import { getDatabase, ref, push, set } from "firebase/database";
 import AlertaContexto from "../contexto/AlertaContexto";
 import { Link, useNavigate } from "react-router-dom";
 import { useContexto } from "../contexto/UsarContexto";
@@ -66,16 +66,12 @@ function Registrate() {
       .then((userCredential) => {
         const user = userCredential.user;
         const db = getDatabase();
-        const usuariosRef = ref(db, "usuarios");
+        const usuariosRef = ref(db, "usuarios/" + user.uid);
         console.log("cuantas veces pasamos por aca? ");
         console.log("userCredential: ", userCredential);
         console.log("user ", user);
-        const Userid = user.uid;
 
-        console.log("la clave del éxito ", Userid);
-
-        push(usuariosRef, {
-          Userid,
+        set(usuariosRef, {
           nombre,
           apellido,
           email,
@@ -89,7 +85,7 @@ function Registrate() {
           .then(() => {
             mostrarAlerta("success", "Registro exitoso");
             login();
-            navigate("/home"); // Navegar a /home
+            navigate("/teenagekicks/home"); // Navegar a /home
           })
           .catch((error) => {
             const errorMessage = error.message;

@@ -22,7 +22,7 @@ const SweetAlert2 = ({ tipo, mensajito }) => {
         Swal.fire({
           icon: "success",
           title: "¡Bienvenido!",
-          html: `${mensajito} <br/><p>safaste que no por ahora no validamos casilla de correo</p>`,
+          html: `${mensajito} <br/><p>safaste que por ahora no validamos casilla de correo</p>`,
         });
         break;
       case "info":

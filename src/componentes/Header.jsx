@@ -6,9 +6,9 @@ function Header() {
     <header>
       <nav>
         <div className={estilo.navegador}>
-          <Link to={"/home"}>Soy</Link>
-          <Link to={"/inventario"}>Medias</Link>
-          <Link to={"/carrito"}>Carrito</Link>
+          <Link to={"/teenagekicks/home"}>Soy</Link>
+          <Link to={"/teenagekicks/inventario"}>Medias</Link>
+          <Link to={"/teenagekicks/carrito"}>Carrito</Link>
         </div>
       </nav>
     </header>
