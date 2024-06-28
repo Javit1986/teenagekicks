@@ -23,7 +23,7 @@ function Login() {
         console.log("Usuario autenticado:", user.uid);
         mostrarAlerta("success", "¡Inicio de sesión exitoso!");
         setTimeout(() => {
-          navigate("/home"); // Navegar a /home después de un breve retraso
+          navigate("/teenagekicks/home"); // Navegar a /home después de un breve retraso
         }, 1500); // 1.5 segundos de retraso
       })
       .catch((error) => {
