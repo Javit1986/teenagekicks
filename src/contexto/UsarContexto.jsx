@@ -1,50 +1,92 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref, get, onValue } from "firebase/database";
 import rayo from "../assets/rayo.png";
 import salirPNG from "../assets/salir.png";
+import CarritoVacioPNG from "../assets/carritovacio.png";
 
 const Contexto = createContext();
 
 function UsarContexto({ children }) {
-  const estadoinicial = { medias: [], medias_elegidas: [] };
   const [sesion, setSesion] = useState(false);
+  const [usuario, setUsuario] = useState("");
+  const [productos, setProductos] = useState({});
+  const [uid, setUid] = useState(null);
 
-  const login = () => {
+  const login = (uid) => {
     setSesion(true);
+    setUid(uid);
   };
 
   const logout = () => {
+    const auth = getAuth();
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         setSesion(false);
+        setUid(null);
+        setUsuario(""); // Limpiar el nombre del usuario al cerrar sesión
       })
       .catch((error) => {
-        // An error happened.
+        console.error(error);
       });
   };
 
   const handleCerrarSesion = () => {
     console.log("seguro que se quiere ir?");
-
     logout();
   };
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      login();
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      logout();
-    }
-  });
 
-  return <Contexto.Provider value={{ estadoinicial, sesion, login, logout, rayo, salirPNG, handleCerrarSesion, onAuthStateChanged }}>{children}</Contexto.Provider>;
+  const obtenerNombreUsuario = () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (user) {
+      const db = getDatabase();
+      const usuarioRef = ref(db, `usuarios/${user.uid}`);
+      onValue(
+        usuarioRef,
+        (snapshot) => {
+          const userData = snapshot.val();
+          setUsuario(userData.nombre);
+        },
+        { onlyOnce: true }
+      );
+    } else {
+      console.log("Usuario no autenticado");
+    }
+  };
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        login(user.uid);
+        obtenerNombreUsuario(); // Obtener el nombre del usuario cuando inicie sesión
+      } else {
+        logout();
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    const db = getDatabase();
+    const productosRef = ref(db, "productos");
+    get(productosRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setProductos(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  return <Contexto.Provider value={{ sesion, login, logout, rayo, salirPNG, CarritoVacioPNG, handleCerrarSesion, productos, usuario }}>{children}</Contexto.Provider>;
 }
 
 export default UsarContexto;

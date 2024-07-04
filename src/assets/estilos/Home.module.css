@@ -22,39 +22,12 @@ button:hover {
 /* Home.module.css */
 
 .contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
-  max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
-  margin: 0 auto; /* Centra el contenido horizontalmente */
-  padding: 20px;
-}
-
-.saludo {
-  text-align: left;
-  color: #f5deb3;
-  position: fixed;
-
-  top: 0; /* Fijado a la parte superior */
-  left: 50px; /* Fijado a la izquierda */
-
-  z-index: 1000;
-  padding: 2px;
-}
-
-.imgsalir {
-  text-align: left;
-  color: #f5deb3;
-  position: fixed;
-  max-height: 40px;
-  top: 16px;
-  left: 10px;
-
-  z-index: 1000;
-  padding: 2px;
-}
-
-.imgsalir:hover {
-  color: #007bff;
-  cursor: pointer;
 }
 
 .listaMedias {
@@ -92,4 +65,10 @@ button:hover {
 
 .media button:hover {
   background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+  .center-content {
+    width: 50%;
+  }
 }

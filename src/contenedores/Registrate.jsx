@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, push, set } from "firebase/database";
+import { getDatabase, ref, set } from "firebase/database";
 import AlertaContexto from "../contexto/AlertaContexto";
 import { Link, useNavigate } from "react-router-dom";
 import { useContexto } from "../contexto/UsarContexto";
@@ -8,7 +8,7 @@ import estilo from "../assets/estilos/Registrate.module.css";
 
 function Registrate() {
   const { login, rayo } = useContexto();
-  const { mostrarAlerta } = useContext(AlertaContexto); // Obtener la función mostrarAlerta del contexto
+  const { mostrarAlerta } = useContext(AlertaContexto);
   const auth = getAuth();
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ function Registrate() {
       altura: "",
     },
     carrito: {
-      elementos: "",
+      elementos: {},
     },
   });
 
@@ -67,9 +67,6 @@ function Registrate() {
         const user = userCredential.user;
         const db = getDatabase();
         const usuariosRef = ref(db, "usuarios/" + user.uid);
-        console.log("cuantas veces pasamos por aca? ");
-        console.log("userCredential: ", userCredential);
-        console.log("user ", user);
 
         set(usuariosRef, {
           nombre,
@@ -85,7 +82,7 @@ function Registrate() {
           .then(() => {
             mostrarAlerta("success", "Registro exitoso");
             login();
-            navigate("/teenagekicks/home"); // Navegar a /home
+            navigate("/teenagekicks/home");
           })
           .catch((error) => {
             const errorMessage = error.message;
@@ -104,7 +101,6 @@ function Registrate() {
       <h3>Necesitamos tus datos para registrarte</h3>
       <div className={estilo.parrafo}>
         <p>es importante para que las medias</p>
-
         <p className={estilo.parrafo2}>lleguen a tus patas</p>
       </div>
       <div className="contiene">

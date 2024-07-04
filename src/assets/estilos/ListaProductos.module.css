@@ -1,0 +1,48 @@
+.listaMedias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.elementos p {
+  margin: 8px 0; /* Ajusta el margen superior e inferior a 8px y elimina los márgenes laterales */
+}
+
+.media {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 180px; /* Aumentamos el ancho para incluir la imagen */
+  background-color: #f8f9fa; /* Cambiamos el color de fondo */
+}
+
+.media h3 {
+  margin: 10px 0 5px 0; /* Ajustamos los márgenes del título */
+  font-size: 16px; /* Reducimos un poco el tamaño del título */
+}
+
+.media img {
+  max-width: 100%; /* Aseguramos que la imagen se ajuste al contenedor */
+  border-radius: 5px; /* Añadimos bordes redondeados a la imagen */
+  margin-bottom: 10px; /* Espacio inferior para separar la imagen del texto */
+}
+
+.media p {
+  margin: 5px 0; /* Ajustamos los márgenes del texto */
+  font-size: 14px;
+}
+
+.media button {
+  margin-top: 10px;
+  padding: 8px 12px; /* Ajustamos el padding del botón */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.media button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,75 @@
+.elementos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centra los elementos */
+}
+
+.elementos p {
+  margin: 8px 0; /* Ajusta el margen superior e inferior a 8px y elimina los márgenes laterales */
+}
+
+.carrito_item {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px; /* Ajustamos el ancho para cada item */
+  background-color: orange; /* Cambiamos el color de fondo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.carrito_img {
+  width: 150px; /* Ajustamos el ancho de la imagen */
+  height: 150px; /* Ajustamos la altura de la imagen */
+  object-fit: cover; /* Mantenemos la proporción de la imagen */
+  border-radius: 5px; /* Añadimos bordes redondeados a la imagen */
+  margin-bottom: 10px; /* Espacio inferior para separar la imagen del texto */
+}
+
+.carrito_item_datos {
+  width: 100%; /* Aseguramos que los datos ocupen todo el ancho del contenedor */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+.carrito_item_datos p {
+  margin: 5px 0; /* Ajustamos los márgenes del texto */
+  font-size: 14px;
+}
+
+.eliminar_btn {
+  margin-top: 10px;
+  padding: 8px 12px; /* Ajustamos el padding del botón */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  width: 100%; /* El botón ocupa todo el ancho del contenedor */
+}
+
+.eliminar_btn:hover {
+  background-color: #0056b3;
+}
+
+.carrito_total {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.comprar_btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.comprar_btn:hover {
+  background-color: #218838;
+}

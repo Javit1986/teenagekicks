@@ -1,0 +1,44 @@
+.media {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media h3 {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+}
+
+.media img {
+  width: 160px; /* Ajustamos el ancho de la imagen */
+  max-height: 200px; /* Ajusta este valor según sea necesario */
+  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.media p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.media button {
+  margin-top: auto;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.media button:hover {
+  background-color: #0056b3;
+}
