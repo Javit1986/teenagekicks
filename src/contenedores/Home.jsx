@@ -16,7 +16,9 @@ function Home() {
       const data = snapshot.val();
       if (data) {
         const productosArray = Object.keys(data).map((key) => ({
-          tipo: key,
+          idProd: key,
+          tipo: data[key].tipo,
+          descripcion: data[key].descripcion,
           precio: data[key].precio,
           img_url: data[key].img_url,
         }));

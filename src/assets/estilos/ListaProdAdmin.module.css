@@ -1,0 +1,70 @@
+.listaProdAdmin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.producto {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+  background-color: #f8f9fa;
+}
+
+.producto h3 {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.producto p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.producto input {
+  margin: 5px 0;
+  padding: 5px;
+  width: calc(100% - 10px);
+}
+
+.producto button {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+  background-color: #0056b3;
+}
+
+.cajaEditar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cajaEditar img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.cajaEditar input,
+.cajaEditar button {
+  margin: 5px 0;
+  padding: 5px;
+  width: calc(100% - 20px);
+}

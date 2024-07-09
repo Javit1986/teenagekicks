@@ -12,7 +12,7 @@ function Producto({ producto }) {
     const db = getDatabase();
 
     if (user) {
-      const usuarioRefCarrito = ref(db, `usuarios/${user.uid}/carrito/elementos/${producto.tipo}`);
+      const usuarioRefCarrito = ref(db, `usuarios/${user.uid}/carrito/elementos/${producto.idProd}`);
 
       get(usuarioRefCarrito)
         .then((snapshot) => {
@@ -24,7 +24,7 @@ function Producto({ producto }) {
           console.error("Error al obtener la cantidad del producto en el carrito:", error.message);
         });
     }
-  }, [producto.tipo]);
+  }, [producto.idProd]);
 
   const ponerEnCarro = async () => {
     const auth = getAuth();
@@ -32,7 +32,7 @@ function Producto({ producto }) {
     const db = getDatabase();
 
     if (user) {
-      const usuarioRefCarrito = ref(db, `usuarios/${user.uid}/carrito/elementos/${producto.tipo}`);
+      const usuarioRefCarrito = ref(db, `usuarios/${user.uid}/carrito/elementos/${producto.idProd}`);
 
       try {
         const snapshot = await get(usuarioRefCarrito);
@@ -57,8 +57,9 @@ function Producto({ producto }) {
 
   return (
     <div className={estilo.media}>
-      <img src={producto.img_url} alt={producto.tipo} className={estilo.imagenProducto} />
-      <h3>{producto.tipo}</h3>
+      <img src={producto.img_url} alt={producto.descripcion} className={estilo.imagenProducto} />
+      <h3>{producto.descripcion}</h3>
+      <p>{producto.tipo}</p>
       <p>Precio: ${producto.precio} pesos Arg</p>
       <button onClick={ponerEnCarro}>Agregar al Carrito{cantidadEnCarrito > 0 ? ` (${cantidadEnCarrito})` : ""}</button>
     </div>

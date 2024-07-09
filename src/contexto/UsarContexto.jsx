@@ -12,10 +12,13 @@ function UsarContexto({ children }) {
   const [usuario, setUsuario] = useState("");
   const [productos, setProductos] = useState({});
   const [uid, setUid] = useState(null);
+  const [uidval, setUidval] = useState(null);
+  const adminUID = "loLuvWeoD2T2keAD6loKV2pKPng2"; // UID del administrador
 
   const login = (uid) => {
     setSesion(true);
     setUid(uid);
+    setUidval(uid); // Establecer el uid aquí
   };
 
   const logout = () => {
@@ -24,6 +27,7 @@ function UsarContexto({ children }) {
       .then(() => {
         setSesion(false);
         setUid(null);
+        setUidval(null); // Limpiar el uidval al cerrar sesión
         setUsuario(""); // Limpiar el nombre del usuario al cerrar sesión
       })
       .catch((error) => {
@@ -47,12 +51,13 @@ function UsarContexto({ children }) {
         usuarioRef,
         (snapshot) => {
           const userData = snapshot.val();
+          console.log("CONTEXTO SACA NOMBRE: userData:", userData);
           setUsuario(userData.nombre);
         },
         { onlyOnce: true }
       );
     } else {
-      console.log("Usuario no autenticado");
+      console.log("CONTEXTO: Usuario no autenticado");
     }
   };
 
@@ -86,7 +91,7 @@ function UsarContexto({ children }) {
       });
   }, []);
 
-  return <Contexto.Provider value={{ sesion, login, logout, rayo, salirPNG, CarritoVacioPNG, handleCerrarSesion, productos, usuario }}>{children}</Contexto.Provider>;
+  return <Contexto.Provider value={{ sesion, login, logout, rayo, salirPNG, CarritoVacioPNG, handleCerrarSesion, productos, usuario, uidval, adminUID }}>{children}</Contexto.Provider>;
 }
 
 export default UsarContexto;

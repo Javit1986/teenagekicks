@@ -5,11 +5,11 @@ import SaludoUsuario from "../contenedores/SaludoUsuario";
 import logo from "../assets/logo.png";
 
 function Soy() {
-  const { usuario, salirPNG, handleCerrarSesion } = useContexto();
+  const { sesion, usuario, salirPNG, handleCerrarSesion } = useContexto();
 
   return (
     <>
-      <SaludoUsuario usuario={usuario} salirPNG={salirPNG} handleCerrarSesion={handleCerrarSesion} />
+      {sesion ? <SaludoUsuario usuario={usuario} salirPNG={salirPNG} handleCerrarSesion={handleCerrarSesion} /> : null}
       <div className={estilo.texto}>
         <h2 className={estilo.marca}>TEENAGE KICK</h2>
         <p>

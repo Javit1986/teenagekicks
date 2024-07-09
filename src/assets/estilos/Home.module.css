@@ -1,3 +1,41 @@
+/* Añadir los estilos para el formulario de nuevo producto */
+.formularioNuevoProducto {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.formularioNuevoProducto h2 {
+  margin-bottom: 10px;
+}
+
+.formularioNuevoProducto input {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formularioNuevoProducto button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formularioNuevoProducto button:hover {
+  background-color: #218838;
+}
+
+
 input {
   display: block;
   margin: 10px 0;
@@ -22,12 +60,39 @@ button:hover {
 /* Home.module.css */
 
 .contenedor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   width: 100%;
+  max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px;
+}
+
+.saludo {
+  text-align: left;
+  color: #f5deb3;
+  position: fixed;
+
+  top: 0; /* Fijado a la parte superior */
+  left: 50px; /* Fijado a la izquierda */
+
+  z-index: 1000;
+  padding: 2px;
+}
+
+.imgsalir {
+  text-align: left;
+  color: #f5deb3;
+  position: fixed;
+  max-height: 40px;
+  top: 16px;
+  left: 10px;
+
+  z-index: 1000;
+  padding: 2px;
+}
+
+.imgsalir:hover {
+  color: #007bff;
+  cursor: pointer;
 }
 
 .listaMedias {
@@ -65,10 +130,4 @@ button:hover {
 
 .media button:hover {
   background-color: #0056b3;
-}
-
-@media (min-width: 768px) {
-  .center-content {
-    width: 50%;
-  }
 }
