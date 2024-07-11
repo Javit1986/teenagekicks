@@ -1,4 +1,4 @@
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../componentes/Layout";
 import "../assets/estilos/App.css";
 import UsarContexto, { useContexto } from "../contexto/UsarContexto";
@@ -8,7 +8,7 @@ import "../firebase"; // Importa la configuración de Firebase
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/teenagekicks">
       <UsarContexto>
         <UsarAlertaContexto>
           <Layout>
@@ -16,7 +16,7 @@ function App() {
           </Layout>
         </UsarAlertaContexto>
       </UsarContexto>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
