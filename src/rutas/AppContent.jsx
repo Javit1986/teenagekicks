@@ -14,15 +14,15 @@ const AppContent = () => {
 
   return (
     <Routes>
-      <Route path="/teenagekicks/" element={sesion ? <Navigate to="/teenagekicks/home" /> : <Login />} />
-      <Route path="/teenagekicks/login" element={sesion ? <Navigate to="/teenagekicks/home" /> : <Login />} />
-      <Route path="/teenagekicks/registrate" element={sesion ? <Navigate to="/teenagekicks/home" /> : <Registrate />} />
-      <Route path="/teenagekicks/home" element={sesion ? <Home /> : <Navigate to="/teenagekicks/login" />} />
-      <Route path="/teenagekicks/inventario" element={sesion ? <Home /> : <Navigate to="/teenagekicks/login" />} />
-      <Route path="/teenagekicks/carrito" element={sesion ? <Carrito /> : <Navigate to="/teenagekicks/login" />} />
-      <Route path="/teenagekicks/soy" element={<Soy />} />
-      {/*   <Route path="/teenagekicks/ABMadmin" element={sesion ? <ABMadmin /> : <Navigate to="/teenagekicks/login" />} /> */}
-      <Route path="/teenagekicks/ABMadmin" element={<ABMadmin />} />
+      <Route path="/" element={sesion ? <Navigate to="/home" /> : <Login />} />
+      <Route path="/login" element={sesion ? <Navigate to="/home" /> : <Login />} />
+      <Route path="/registrate" element={sesion ? <Navigate to="/home" /> : <Registrate />} />
+      <Route path="/home" element={sesion ? <Home /> : <Navigate to="/login" />} />
+      <Route path="/inventario" element={sesion ? <Home /> : <Navigate to="/login" />} />
+      <Route path="/carrito" element={sesion ? <Carrito /> : <Navigate to="/login" />} />
+      <Route path="/soy" element={<Soy />} />
+      <Route path="/ABMadmin" element={sesion ? <ABMadmin /> : <Navigate to="/login" />} />
+      {/*      <Route path="/teenagekicks/ABMadmin" element={<ABMadmin />} /> */}
     </Routes>
   );
 };

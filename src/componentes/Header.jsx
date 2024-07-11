@@ -17,10 +17,10 @@ function Header() {
     <header>
       <nav>
         <div className={estilo.navegador}>
-          <Link to={"/teenagekicks/inventario"}>Medias</Link>
-          <Link to={"/teenagekicks/carrito"}>Carrito</Link>
-          <Link to={"/teenagekicks/soy"}>Soy</Link>
-          {isReady && uidval === adminUID && <Link to={"/teenagekicks/ABMadmin"}>::EDITAR::</Link>}
+          <Link to={"/inventario"}>Medias</Link>
+          <Link to={"/carrito"}>Carrito</Link>
+          <Link to={"/soy"}>Soy</Link>
+          {isReady && uidval === adminUID && <Link to={"/ABMadmin"}>::EDITAR::</Link>}
         </div>
       </nav>
     </header>

@@ -24,9 +24,9 @@ function Login() {
         mostrarAlerta("success", "¡Inicio de sesión exitoso!");
         setTimeout(() => {
           if (user.uid === "loLuvWeoD2T2keAD6loKV2pKPng2") {
-            navigate("/teenagekicks/ABMadmin");
+            navigate("/ABMadmin");
           } else {
-            navigate("/teenagekicks/home");
+            navigate("/home");
           }
         }, 1500); // 1.5 segundos de retraso
       })

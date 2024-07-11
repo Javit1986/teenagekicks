@@ -82,7 +82,7 @@ function Registrate() {
           .then(() => {
             mostrarAlerta("success", "Registro exitoso");
             login();
-            navigate("/teenagekicks/home");
+            navigate("/home");
           })
           .catch((error) => {
             const errorMessage = error.message;
