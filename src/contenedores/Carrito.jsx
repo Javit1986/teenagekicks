@@ -18,7 +18,7 @@ function Carrito() {
 
   const crearPreferencia = async () => {
     try {
-      const response = await axios.post("http://186.61.166.73:3000/create_preference", {
+      const response = await axios.post("https://186.61.166.73:3000/create_preference", {
         title: "tus Teenage Kicks Medias!",
         quantity: 1, // Este debe ser un número
         price: total,
