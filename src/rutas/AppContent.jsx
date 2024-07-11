@@ -14,7 +14,6 @@ const AppContent = () => {
 
   return (
     <Routes>
-      <Route path="/*" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/login" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/registrate" element={sesion ? <Navigate to="/home" /> : <Registrate />} />
@@ -23,7 +22,7 @@ const AppContent = () => {
       <Route path="/carrito" element={sesion ? <Carrito /> : <Navigate to="/login" />} />
       <Route path="/soy" element={<Soy />} />
       <Route path="/ABMadmin" element={sesion ? <ABMadmin /> : <Navigate to="/login" />} />
-      {/*      <Route path="/teenagekicks/ABMadmin" element={<ABMadmin />} /> */}
+      <Route path="/*" element={<Navigate to="/" />} />
     </Routes>
   );
 };

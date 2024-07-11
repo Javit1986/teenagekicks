@@ -8,7 +8,7 @@ import "../firebase"; // Importa la configuración de Firebase
 
 function App() {
   return (
-    <HashRouter basename="/teenagekicks">
+    <HashRouter>
       <UsarContexto>
         <UsarAlertaContexto>
           <Layout>
