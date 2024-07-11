@@ -14,6 +14,7 @@ const AppContent = () => {
 
   return (
     <Routes>
+      <Route path="/*" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/login" element={sesion ? <Navigate to="/home" /> : <Login />} />
       <Route path="/registrate" element={sesion ? <Navigate to="/home" /> : <Registrate />} />
