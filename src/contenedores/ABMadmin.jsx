@@ -25,7 +25,7 @@ function ABMadmin() {
 
     if (uidval !== adminUID) {
       console.log("Usuario no autorizado o no autenticado");
-      navigate("/home");
+      navigate("/teenagekicks/home");
     }
   }, [uidval, navigate]);
 

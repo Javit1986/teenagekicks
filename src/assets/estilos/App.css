@@ -69,3 +69,23 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 1300px) {
+
+  #root {
+    max-width: auto;
+    max-height: auto;
+    margin: 0 auto;
+    padding: auto;
+    text-align: center;
+    overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+    font-size: 10px;
+    
+  }
+
+
+}

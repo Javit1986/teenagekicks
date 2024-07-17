@@ -8,7 +8,7 @@ import "../firebase"; // Importa la configuración de Firebase
 
 function App() {
   return (
-    <BrowserRouter basename="/teenagekicks">
+    <BrowserRouter>
       <UsarContexto>
         <UsarAlertaContexto>
           <Layout>

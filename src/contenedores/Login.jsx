@@ -24,9 +24,9 @@ function Login() {
         mostrarAlerta("success", "¡Inicio de sesión exitoso!");
         setTimeout(() => {
           if (user.uid === "loLuvWeoD2T2keAD6loKV2pKPng2") {
-            navigate("/ABMadmin");
+            navigate("/teenagekicks/ABMadmin");
           } else {
-            navigate("/home");
+            navigate("/teenagekicks/home");
           }
         }, 1500); // 1.5 segundos de retraso
       })
@@ -59,7 +59,7 @@ function Login() {
       <input type="email" onChange={handleTexto} name="email" placeholder="email" />
       <input type="password" onChange={handleTexto} name="password" placeholder="contraseña" />
       <button onClick={handleLogin}> login </button>
-      <Link to={"/registrate"}>
+      <Link to={"/teenagekicks/registrate"}>
         <button> registrate </button>
       </Link>
     </div>
